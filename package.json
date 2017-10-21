@@ -1,0 +1,18 @@
+{
+  "name": "vueform",
+  "version": "0.0.1",
+  "description": "a form SPA testing the functionality of Vue.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "Vue",
+    "Form"
+  ],
+  "author": "Carl Pryke",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.5.2"
+  }
+}
