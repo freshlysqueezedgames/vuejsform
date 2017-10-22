@@ -37,6 +37,18 @@
         <div class="grid-content bg-purple-dark">{{customerQuery}}</div>
       </el-col>
     </el-row>
+    <el-row>
+      <el-col :span="6" :xs="{span: 22, offset: 1}" :offset="6">
+        <div class="link">
+          <router-link to="/">{{ homeLink }}</router-link>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="link">
+          <router-link to="/">{{ formLink }}</router-link>
+        </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -49,6 +61,9 @@ export default {
 
   data () { // We don't need a private state, we are rendering content from the store
     const data = {
+      homeLink: 'Return To Home',
+      formLink: 'Return To Form',
+
       table: [{
         label: 'Name',
         value: person.getters.getFirstName + ' ' + person.getters.getLastName
@@ -102,6 +117,11 @@ h2 {
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+.link {
+  margin-top: 20px;
+  text-align: center;
 }
 
 li {

@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>Welcome!</h1>
+    <h1>Welcome</h1>
     <p>
       Click the link to begin entering details into our system.
     </p>
@@ -13,7 +13,7 @@ export default {
   name: 'Home',
   data () {
     return {
-      msg: 'Enter Your Details'
+      msg: 'Let\'s Go!'
     }
   }
 }
@@ -21,8 +21,17 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+  div.hello {
+    text-align: center;
+  }
+
   h1, h2 {
     font-weight: normal;
+  }
+
+  h1 {
+    margin-top: 100px;
   }
 
   ul {
