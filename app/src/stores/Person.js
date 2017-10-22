@@ -1,28 +1,68 @@
-const person =
+
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+const person = new Vuex.Store({
+  state:
   {
-    debug: true,
+    firstName: '',
+    lastName: '',
+    age: '',
+    mobileNumber: '',
+    emailAddress: '',
+    dateOfBirth: null,
+    customerQuery: ''
+  },
 
-    state:
-    {
-      firstName: 'John',
-      lastName: 'Doe',
-      age: 27,
-      mobileNumber: '',
-      emailAddress: '',
-      dateOfBirth: new Date(1990, 1, 1),
-      customerQuery: ''
+  getters: {
+    getFirstName: state => {
+      return state.firstName
     },
 
-    setMessageAction (newValue) {
-      if (this.debug) console.log('setMessageAction triggered with', newValue)
-      this.state.message = newValue
+    getLastName: state => {
+      return state.lastName
     },
 
-    clearMessageAction () {
-      if (this.debug) console.log('clearMessageAction triggered')
-      this.state.message = ''
+    getAge: state => {
+      return state.age
+    },
+
+    getMobileNumber: state => {
+      return state.mobileNumber
+    },
+
+    getEmailAddress: state => {
+      return state.emailAddress
+    },
+
+    getDateOfBirth: state => {
+      return state.dateOfBirth
+    },
+
+    getCustomerQuery: state => {
+      return state.customerQuery
     }
+  },
 
+  mutations: {
+    save (state, payload) {
+      state.firstName = payload.firstName
+      state.lastName = payload.lastName
+      state.age = payload.age
+      state.mobileNumber = payload.mobileNumber
+      state.emailAddress = payload.emailAddress
+      state.dateOfBirth = payload.dateOfBirth
+      state.customerQuery = payload.customerQuery
+    }
+  },
+
+  actions: {
+    save ({commit, state}, products) {
+      commit('save', products)
+    }
   }
+})
 
 export default person

@@ -3,9 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
 import ElementUI from 'element-ui'
+
+import lang from 'element-ui/lib/locale/lang/en'
+import locale from 'element-ui/lib/locale'
+
 import 'element-ui/lib/theme-default/index.css'
+
+locale.use(lang)
 
 Vue.config.productionTip = false
 

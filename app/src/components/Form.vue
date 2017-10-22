@@ -1,89 +1,148 @@
 <template>
-  <form class="el-form demo-ruleForm">
-    <div class="el-form-item is-required">
-      <label for="name" class="el-form-item__label" style="width: 120px;">Activity name</label>
-      <div class="el-form-item__content" style="margin-left: 120px;">
-        <div class="el-input">
-          <!---->
-          <!---->
-          <input autocomplete="off" type="text" rows="2" validateevent="true" class="el-input__inner"></div>
-          <!---->
-        </div>
-      </div>
-      <div class="el-form-item is-required">
-        <label for="region" class="el-form-item__label" style="width: 120px;">Activity zone</label>
-        <div class="el-form-item__content" style="margin-left: 120px;">
-          <div class="el-select">
-            <!---->
-            <div class="el-input">
-              <!---->
-              <i class="el-input__icon el-icon-caret-top"></i>
-              <input autocomplete="off" placeholder="Activity zone" readonly="readonly" icon="caret-top" type="text" rows="2" class="el-input__inner"></div>
-              <div class="el-select-dropdown" style="display: none; min-width: 360px;">
-                <div class="el-scrollbar" style="">
-                  <div class="el-select-dropdown__wrap el-scrollbar__wrap" style="margin-bottom: -17px; margin-right: -17px;">
-                    <ul class="el-scrollbar__view el-select-dropdown__list" style="position: relative;">
-                      <li class="el-select-dropdown__item">
-                        <span>Zone one</span>
-                      </li>
-                      <li class="el-select-dropdown__item">
-                        <span>Zone two</span>
-                      </li>
-                      <div class="resize-triggers">
-                        <div class="expand-trigger">
-                          <div style="width: 1px; height: 1px;"></div>
-                        </div>
-                        <div class="contract-trigger"></div>
-                      </div>
-                    </ul>
-                  </div>
-                  <div class="el-scrollbar__bar is-horizontal">
-                    <div class="el-scrollbar__thumb" style="transform: translateX(0%);"></div>
-                  </div>
-                  <div class="el-scrollbar__bar is-vertical">
-                    <div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="resize-triggers">
-                <div class="expand-trigger">
-                  <div style="width: 361px; height: 37px;"></div>
-                </div>
-                <div class="contract-trigger"></div>
-              </div>
-            </div>
-            <!---->
-          </div>
-        </div>
-        <div class="el-form-item is-required">
-          <label class="el-form-item__label" style="width: 120px;">Activity time</label>
-          <div class="el-form-item__content" style="margin-left: 120px;">
-            <div class="el-col el-col-11">
-              <div class="el-form-item is-required">
-                <!---->
-                <div class="el-form-item__content">
-                  <div class="el-date-editor el-input el-date-editor--date" style="width: 100%;">
-                    <!---->
-                    <i class="el-input__icon el-icon-date"></i>
-                    <input autocomplete="off" placeholder="Pick a date" type="text" rows="2" class="el-input__inner"></div>
-                    <!---->
-                  </div>
-                </div>
-              </div>
-              <div class="line el-col el-col-2">-</div><div class="el-col el-col-11"><div class="el-form-item is-required"><!----><div class="el-form-item__content"><div class="el-date-editor el-input el-date-editor--time" type="fixed-time" style="width: 100%;"><!----><i class="el-input__icon el-icon-time"></i><input autocomplete="off" placeholder="Pick a time" type="text" rows="2" class="el-input__inner"></div><!----></div></div></div><!----></div></div><div class="el-form-item"><label for="delivery" class="el-form-item__label" style="width: 120px;">Instant delivery</label><div class="el-form-item__content" style="margin-left: 120px;"><label class="el-switch"><div class="el-switch__mask" style="display: none;"></div><input type="checkbox" name="" true-value="true" class="el-switch__input"><span class="el-switch__core" style="width: 46px;"><span class="el-switch__button" style="transform: translate(2px, 2px);"></span></span><div class="el-switch__label el-switch__label--left" style="width: 46px; display: none;"><!----><!----></div><div class="el-switch__label el-switch__label--right" style="width: 46px;"><!----><!----></div></label><!----></div></div><div class="el-form-item is-required"><label for="type" class="el-form-item__label" style="width: 120px;">Activity type</label><div class="el-form-item__content" style="margin-left: 120px;"><div class="el-checkbox-group"><label class="el-checkbox"><span class="el-checkbox__input"><span class="el-checkbox__inner"></span><input type="checkbox" name="type" class="el-checkbox__original" value="Online activities"></span><span class="el-checkbox__label">Online activities</span></label><label class="el-checkbox"><span class="el-checkbox__input"><span class="el-checkbox__inner"></span><input type="checkbox" name="type" class="el-checkbox__original" value="Promotion activities"></span><span class="el-checkbox__label">Promotion activities</span></label><label class="el-checkbox"><span class="el-checkbox__input"><span class="el-checkbox__inner"></span><input type="checkbox" name="type" class="el-checkbox__original" value="Offline activities"></span><span class="el-checkbox__label">Offline activities</span></label><label class="el-checkbox"><span class="el-checkbox__input"><span class="el-checkbox__inner"></span><input type="checkbox" name="type" class="el-checkbox__original" value="Simple brand exposure"></span><span class="el-checkbox__label">Simple brand exposure</span></label></div><!----></div></div><div class="el-form-item is-required"><label for="resource" class="el-form-item__label" style="width: 120px;">Resources</label><div class="el-form-item__content" style="margin-left: 120px;"><div class="el-radio-group"><label class="el-radio"><span class="el-radio__input"><span class="el-radio__inner"></span><input type="radio" class="el-radio__original" value="Sponsorship"></span><span class="el-radio__label">Sponsorship</span></label><label class="el-radio"><span class="el-radio__input"><span class="el-radio__inner"></span><input type="radio" class="el-radio__original" value="Venue"></span><span class="el-radio__label">Venue</span></label></div><!----></div></div><div class="el-form-item is-required"><label for="desc" class="el-form-item__label" style="width: 120px;">Activity form</label><div class="el-form-item__content" style="margin-left: 120px;"><div class="el-textarea"><textarea type="textarea" rows="2" autocomplete="off" validateevent="true" class="el-textarea__inner"></textarea></div><!----></div></div><div class="el-form-item"><!----><div class="el-form-item__content" style="margin-left: 120px;"><button type="button" class="el-button el-button--primary"><!----><!----><span>Create</span></button><button type="button" class="el-button el-button--default"><!----><!----><span>Reset</span></button><!----></div></div></form>
+  <div class="demo-block">
+    <el-form ref="form" :model="form" :rules="rules" label-width="120px">
+      <el-form-item label="First Name" prop="firstName" required>
+        <el-input placeholder="Please input" v-model.trim="form.firstName" @blur="toName('firstName', form.firstName)"></el-input>
+      </el-form-item> 
+      <el-form-item label="Surname" prop="lastName" required>
+        <el-input placeholder="Please input" v-model.trim="form.lastName" @blur="toName('lastName', form.lastName)"></el-input>
+      </el-form-item>  
+      <el-form-item label="Mobile Number" prop="mobileNumber" required>
+        <el-input placeholder="Please input" v-model.trim="form.mobileNumber" type="tel"></el-input>
+      </el-form-item>  
+      <el-form-item label="Email" prop="email" required>
+        <el-input placeholder="Please input" v-model.trim="form.email" type="email"></el-input>
+      </el-form-item>  
+      <el-form-item label="Age" prop="age">
+        <el-input-number placeholder="Please input" v-model.number="form.age" type="number" :max="150" :min="0"></el-input-number>
+      </el-form-item>  
+      <el-form-item label="Date Of Birth" prop="dateOfBirth">
+        <el-date-picker
+          v-model="form.dateOfBirth"
+          type="date"
+          placeholder="Pick a day">
+        </el-date-picker>
+      </el-form-item>  
+      <el-form-item label="Customer Query" prop="customerQuery" required>
+        <el-input
+          type="textarea"
+          :rows="4"
+          placeholder="Write your query here"
+          v-model="form.customerQuery">
+        </el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" @click="onSubmit">Create</el-button>
+        <el-button @click="onCancel">Cancel</el-button>
+      </el-form-item>
+    </el-form>
+  </div>
 </template>
 
 <script>
 
+import Vue from 'vue'
 import person from '@/stores/Person'
+import RegexUtils from '@/utils/RegexUtils'
+import ROUTES from '@/router/Routes'
 
 export default {
   name: 'Form',
+
   data () {
+    const validateMobileNumber = (rule, value, callback) => {
+      const isValid = !!value.match(RegexUtils.ukPhoneNumber)
+
+      if (isValid) {
+        callback()
+        return
+      }
+
+      callback(new Error('Please enter a valid telephone number'))
+    }
+
+    const validateName = (rule, value, callback) => {
+      const isValid = !!value.match(RegexUtils.name)
+
+      console.log('thats a name alright', isValid, value)
+
+      if (isValid) {
+        callback()
+        return
+      }
+
+      callback(new Error('Names can only include letters'))
+    }
+
     return {
-      msg: 'This is where the form goes',
-      privateState: {},
-      sharedState: person.state
+      test: '',
+      // Keep a private store for immediate internal changes.
+      form: {
+        firstName: '',
+        lastName: '',
+        mobileNumber: '',
+        email: '',
+        age: '',
+        dateOfBirth: '',
+        customerQuery: ''
+      },
+
+      rules: {
+        firstName: [
+          {required: true, message: 'First name is required'},
+          {validator: validateName, trigger: 'blur'}
+        ],
+
+        lastName: [
+          {required: true, message: 'Last name is required'},
+          {validator: validateName, trigger: 'blur'}
+        ],
+
+        mobileNumber: [
+          {required: true, message: 'Please enter a mobile number'},
+          {type: 'tel', message: 'Must be a valid telephone number', validator: validateMobileNumber}
+        ],
+
+        email: [
+          {required: true, message: 'Please enter a email address'},
+          {type: 'email', message: 'Please enter a valid email address [NAME@DOMAIN.COM]', trigger: 'blur'}
+        ],
+
+        dateOfBirth: [
+          {type: 'date', message: 'Date must be of format DD/MM/YYYY'}
+        ],
+
+        customerQuery: [
+          {required: true, message: 'Please enter a query', trigger: 'blur'}
+        ]
+      }
+    }
+  },
+
+  methods:
+  {
+    toName (key, value) {
+      Vue.set(this.form, key, value.substr(0, 1).toUpperCase() + value.substr(1).toLowerCase())
+    },
+
+    onSubmit () {
+      this.$refs['form'].validate((valid) => {
+        if (valid) {
+          // We should also run an action that saves the form details to the store at this point
+          // now that validation is complete.
+          person.dispatch('save', this.form)
+
+          // Move to our results state, which will render the values from the store seperately.
+          this.$router.push(ROUTES.RESULTS)
+        } else {
+          console.log('error submit!!')
+          return false
+        }
+      })
+    },
+
+    onCancel () {
+      this.$refs['form'].resetFields()
     }
   }
 }
@@ -108,4 +167,13 @@ li {
 a {
   color: #42b983;
 }
+
+.demo-block
+{
+  border: 1px solid #eaeefb;
+  border-radius: 4px;
+  transition: .2s;
+  padding: 10px;
+}
+
 </style>
