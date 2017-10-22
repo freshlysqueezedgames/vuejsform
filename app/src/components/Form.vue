@@ -10,8 +10,8 @@
       <el-form-item label="Mobile Number" prop="mobileNumber" required>
         <el-input placeholder="Please input" v-model.trim="form.mobileNumber" type="tel"></el-input>
       </el-form-item>  
-      <el-form-item label="Email" prop="email" required>
-        <el-input placeholder="Please input" v-model.trim="form.email" type="email"></el-input>
+      <el-form-item label="Email" prop="emailAddress" required>
+        <el-input placeholder="Please input" v-model.trim="form.emailAddress" type="email"></el-input>
       </el-form-item>  
       <el-form-item label="Age" prop="age">
         <el-input-number placeholder="Please input" v-model.number="form.age" type="number" :max="150" :min="0"></el-input-number>
@@ -22,7 +22,7 @@
           type="date"
           placeholder="Pick a day">
         </el-date-picker>
-      </el-form-item>  
+      </el-form-item>
       <el-form-item label="Customer Query" prop="customerQuery" required>
         <el-input
           type="textarea"
@@ -81,7 +81,7 @@ export default {
         firstName: '',
         lastName: '',
         mobileNumber: '',
-        email: '',
+        emailAddress: '',
         age: '',
         dateOfBirth: '',
         customerQuery: ''
@@ -103,7 +103,7 @@ export default {
           {type: 'tel', message: 'Must be a valid telephone number', validator: validateMobileNumber}
         ],
 
-        email: [
+        emailAddress: [
           {required: true, message: 'Please enter a email address'},
           {type: 'email', message: 'Please enter a valid email address [NAME@DOMAIN.COM]', trigger: 'blur'}
         ],
@@ -174,6 +174,7 @@ a {
   border-radius: 4px;
   transition: .2s;
   padding: 10px;
+  text-align: left;
 }
 
 </style>

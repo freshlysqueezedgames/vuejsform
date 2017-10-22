@@ -1,12 +1,42 @@
 <template>
-  <div class="demo-block">
-      <div>{{firstName}}</div>
-      <div>{{lastName}}</div>
-      <div>{{age}}</div>
-      <div>{{mobileNumber}}</div>
-      <div>{{emailAddress}}</div>
-      <div>{{dateOfBirth}}</div>
-      <div>{{customerQuery}}</div>
+  <div>
+    <el-row>
+      <el-col :span="12" :xs="{span: 22, offset: 1}" :offset="6">
+        <h1>Thank You. Here Are Your Details</h1>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="12" :xs="{span: 22, offset: 1}" :offset="6">
+        <div class="demo-block">
+          <el-row>
+            <el-col :span="24">
+              <el-table
+                :data="table">
+                <el-table-column
+                  prop="label"
+                  label="Label"
+                  width="180">
+                </el-table-column>
+                <el-table-column
+                  prop="value"
+                  label="Value">
+                </el-table-column>
+              </el-table>
+            </el-col>
+          </el-row>
+        </div>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="12" :xs="{span: 22, offset: 1}" :offset="6">
+        <h2>Query</h2>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="12" :xs="{span: 22, offset: 1}" :offset="6">
+        <div class="grid-content bg-purple-dark">{{customerQuery}}</div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -17,31 +47,44 @@ import person from '@/stores/Person'
 export default {
   name: 'Results',
 
+  data () { // We don't need a private state, we are rendering content from the store
+    const data = {
+      table: [{
+        label: 'Name',
+        value: person.getters.getFirstName + ' ' + person.getters.getLastName
+      }, {
+        label: 'Mobile',
+        value: person.getters.getMobileNumber
+      }, {
+        label: 'Email',
+        value: person.getters.getEmailAddress
+      }]
+    }
+
+    const age = person.getters.getAge
+
+    if (age !== '') {
+      data.table.push({
+        label: 'Age',
+        value: age
+      })
+    }
+
+    const dob = person.getters.getDateOfBirth
+
+    console.log(dob, typeof dob)
+
+    if (dob) {
+      data.table.push({
+        label: 'Date of Birth',
+        value: dob.getDate() + ' / ' + (dob.getMonth() + 1) + ' / ' + dob.getFullYear()
+      })
+    }
+
+    return data
+  },
+
   computed: {
-    firstName () {
-      return person.getters.getFirstName
-    },
-
-    lastName () {
-      return person.getters.getLastName
-    },
-
-    age () {
-      return person.getters.getAge
-    },
-
-    mobileNumber () {
-      return person.getters.getMobileNumber
-    },
-
-    emailAddress () {
-      return person.getters.getEmailAddress
-    },
-
-    dateOfBirth () {
-      return person.getters.getDateOfBirth
-    },
-
     customerQuery () {
       return person.getters.getCustomerQuery
     }
@@ -53,6 +96,10 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: normal;
+}
+
+h2 {
+  margin-bottom: 0px;
 }
 
 ul {
@@ -75,6 +122,17 @@ a {
   border-radius: 4px;
   transition: .2s;
   padding: 10px;
+}
+
+.bg-purple-dark {
+  background: #eef1f6;
+}
+
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+  padding: 20px;
+  margin-top: 20px;
 }
 
 </style>
