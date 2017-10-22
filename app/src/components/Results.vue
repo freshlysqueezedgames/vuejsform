@@ -61,7 +61,8 @@ export default {
       }]
     }
 
-    const age = person.getters.getAge
+    const age = person.getters.getAge || '' // Age of 0, means not entered.
+    const dob = person.getters.getDateOfBirth
 
     if (age !== '') {
       data.table.push({
@@ -69,10 +70,6 @@ export default {
         value: age
       })
     }
-
-    const dob = person.getters.getDateOfBirth
-
-    console.log(dob, typeof dob)
 
     if (dob) {
       data.table.push({

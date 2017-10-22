@@ -64,8 +64,6 @@ export default {
     const validateName = (rule, value, callback) => {
       const isValid = !!value.match(RegexUtils.name)
 
-      console.log('thats a name alright', isValid, value)
-
       if (isValid) {
         callback()
         return
@@ -108,10 +106,6 @@ export default {
           {type: 'email', message: 'Please enter a valid email address [NAME@DOMAIN.COM]', trigger: 'blur'}
         ],
 
-        dateOfBirth: [
-          {type: 'date', message: 'Date must be of format DD/MM/YYYY'}
-        ],
-
         customerQuery: [
           {required: true, message: 'Please enter a query', trigger: 'blur'}
         ]
@@ -135,7 +129,7 @@ export default {
           // Move to our results state, which will render the values from the store seperately.
           this.$router.push(ROUTES.RESULTS)
         } else {
-          console.log('error submit!!')
+          this.$message('Please fix the errors before proceeding')
           return false
         }
       })
@@ -143,6 +137,20 @@ export default {
 
     onCancel () {
       this.$refs['form'].resetFields()
+    }
+  },
+
+  watch: {
+    'form.dateOfBirth': function (dateOfBirth) { // Age and DOB should match up. DOB infers Age
+      const today = new Date()
+      let age = today.getFullYear() - dateOfBirth.getFullYear()
+      const month = today.getMonth() - dateOfBirth.getMonth()
+
+      if (month < 0 || (month === 0 && today.getDate() < dateOfBirth.getDate())) {
+        age--
+      }
+
+      Vue.set(this.form, 'age', age)
     }
   }
 }

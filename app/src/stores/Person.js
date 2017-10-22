@@ -9,7 +9,7 @@ const person = new Vuex.Store({
   {
     firstName: '',
     lastName: '',
-    age: '',
+    age: 0,
     mobileNumber: '',
     emailAddress: '',
     dateOfBirth: null,
@@ -47,6 +47,7 @@ const person = new Vuex.Store({
   },
 
   mutations: {
+    // documentation suggests that payload properties should be assigned like this
     save (state, payload) {
       state.firstName = payload.firstName
       state.lastName = payload.lastName
